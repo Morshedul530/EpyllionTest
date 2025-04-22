@@ -1,7 +1,7 @@
 import unittest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from webdriver_manager.chrome import ChromeDriverManager
 import time
 from page.login_page import LoginPage
 
@@ -11,7 +11,7 @@ class LoginTest(unittest.TestCase):
     # Valid Login Test
     def test_valid_login(self):
         baseURL = "https://www.sailor.clothing/login"
-        driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
         driver.maximize_window()
         driver.implicitly_wait(3)
         driver.get(baseURL)
@@ -29,7 +29,7 @@ class LoginTest(unittest.TestCase):
     # Invalid Login Test
     def test_Invalid_login(self):
         baseURL = "https://www.sailor.clothing/login"
-        driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
         driver.maximize_window()
         driver.implicitly_wait(3)
         driver.get(baseURL)
@@ -46,7 +46,7 @@ class LoginTest(unittest.TestCase):
     # Empty Fields Test
     def test_empty_fields(self):
         baseURL = "https://www.sailor.clothing/login"
-        driver = webdriver.Edge(service=Service(EdgeChromiumDriverManager().install()))
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
         driver.maximize_window()
         driver.implicitly_wait(3)
         driver.get(baseURL)
